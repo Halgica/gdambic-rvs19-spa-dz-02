@@ -11,10 +11,10 @@ using namespace std;
 class game_of_life {
 private:
 	static const unsigned int STUPACA = 40;
-	static const unsigned int REDAKA = 30;
+	static const unsigned int REDAKA = 40;
 	bool _generacija[REDAKA][STUPACA];
 	bool _sljedeca_generacija[REDAKA][STUPACA];
-	bool slucajna_vrijednost();
+	//bool slucajna_vrijednost();
 	bool celija_zauzeta(int i, int j);
 	void provjera_okolo(int i, int j);
 	void pravila(int brojac, int i, int j);

@@ -5,18 +5,18 @@ game_of_life::game_of_life(sf::RenderWindow* window)
     this->window = window;
 }
 
-bool game_of_life::slucajna_vrijednost()
-{
-    int random = 1 + rand() % (100 - 1 + 1);
-    if (random <= 25)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
+//bool game_of_life::slucajna_vrijednost()
+//{
+//    int random = 1 + rand() % (100 - 1 + 1);
+//    if (random <= 25)
+//    {
+//        return true;
+//    }
+//    else
+//    {
+//        return false;
+//    }
+//}
 
 bool game_of_life::celija_zauzeta(int i, int j)
 {
@@ -117,11 +117,13 @@ void game_of_life::iscrtaj()
 
 void game_of_life::inicijalizacija()
 {
+    srand(time(0));
     for (size_t i = 0; i < REDAKA; i++)
     {
         for (size_t j = 0; j < STUPACA; j++)
         {
-            if (slucajna_vrijednost())
+            int random = 1 + rand() % (100 - 1 + 1);
+            if (random <= 25)
             {
                 _generacija[i][j] = true;
             }
